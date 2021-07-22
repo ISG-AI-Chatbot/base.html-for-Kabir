@@ -166,7 +166,15 @@
 
               <!--              Current location disabled This is that greay ting at the right end of the navbar which tells the client the page they're on-->
             <li style="position: absolute; right: 30px;">
-              <a id="loc" class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{% block c_loc %}{% endblock %}</a>
+              <a id="loc" class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                  {% block c_loc %}{% endblock %}<!--This bit of code only comes with flask
+                                    What this syntax of braces and percentages is doing, is essentially allowing us to write python code in html
+                                    This specific line of code opens a block, and the endblock closes the same block
+                                        
+                                    Blocks are basically empty buckets which you can do anything with when you onherit this page. You could make more blocks in them
+                                     write raw html, or just leave them empty
+                                    I suggest checking out Tech With Tim's video on flask to get a much better explanation-->
+                </a>
             </li>
           </ul>
             
@@ -210,8 +218,15 @@
       </div>
     </nav>
     <!----------------------E N D   N A V B A R ------------------------------------------>
+        
+<!--          Again, another block-->
+        
 
     {% block body %}{% endblock %}
+        
+        
+        
+        
 
 <!--    Carousel Same as navbar - made with bootstrap-->
     <div class="carousel" id="bottom-carousel">
