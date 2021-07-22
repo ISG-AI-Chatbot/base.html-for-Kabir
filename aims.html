@@ -1,6 +1,11 @@
-{% extends "base.html" %}
-{% block c_loc %} Aims {% endblock %}
-{% block body %}
+<!--  Important part-->
+
+{% extends "base.html" %} <!-- This particular bit of code basically adds the base file to the top of this new page in one line-->
+{% block c_loc %} Aims {% endblock %}<!-- You will have seen in the base file that there were pieces of code basically
+ starting and ending a block. This code to opens those blocks, but now everything between block and endblockis filling in the empty block from before-->
+{% block body %}<!-- Same thing as the previous block, except now at a much larger scale -->
+
+<!--  End important part-->
 
   <div class="text-center" style="margin:20px;">
       <h1 class="display-5">OUR AIMS</h1>
@@ -89,4 +94,4 @@
       <hr>
   </div>
 
-{% endblock %}
+{% endblock %}<!--Aaaand end block!-->
