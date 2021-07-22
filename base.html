@@ -1,5 +1,6 @@
 <html lang="en">
     <head>
+<!--          Just a bunch of imports-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
@@ -74,7 +75,7 @@
 
     <body>
 <!--    ---------------------------N A V B A R--------------------------------------->
-
+<!--     You can look up the bootstrap documentation on navbars fr this - but basically, it's just a lot of lists with some CSS added -->
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
       <div class="container-fluid">
@@ -163,12 +164,13 @@
               </button>
             </li>
 
-              <!--              Current location disabled-->
+              <!--              Current location disabled This is that greay ting at the right end of the navbar which tells the client the page they're on-->
             <li style="position: absolute; right: 30px;">
               <a id="loc" class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{% block c_loc %}{% endblock %}</a>
             </li>
           </ul>
-
+            
+<!--              This is the google translate-->
           <script type="text/javascript">
                 function googleTranslateElementInit() {
                   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
@@ -211,7 +213,7 @@
 
     {% block body %}{% endblock %}
 
-<!--    Carousel-->
+<!--    Carousel Same as navbar - made with bootstrap-->
     <div class="carousel" id="bottom-carousel">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
@@ -287,7 +289,10 @@
 <!--End carousel-->
 
 <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--          I'll again suggest checking out the documentation. But basically, it's a pop up window which appears when you click the chatbot button-->
+<!--  In it there's a form for the user to send things to the backend with ajax(check JS at end) and a chatbox where they can see the messages  -->
+<!--  On top of that there's all the little buttons like the wikipedia, autocorrect, speech to text, text to speech, volume, and speed controls-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <a href="http://127.0.0.1:5000/suggests" target="_blank">
           <button type="button" id="suggest" name="suggest" class="btn btn-warning" style="position:absolute; right:300px; top:30px;">Not the answer<br>you were looking for?
           </button>
@@ -338,6 +343,7 @@
 <!--end modal-->
 
 <!--Javascript-->
+<!--Just what the name says          -->
     <script>
         //Text to speech stuff
         var langChanged = false;
@@ -531,13 +537,14 @@
             });
         });
     </script>
-
+    
+<!--          Final import of bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
     </body>
 </html>
-
+<!--  A last splash of style for the carousel-->
 <style>
     #bottom-carousel{
         width: 800px;
